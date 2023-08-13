@@ -1,0 +1,159 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.card {
+  position: relative;
+}
+.component {
+  display: flex;
+  width: 80rem;
+  height: 50rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 25%);
+}
+.gradient-overlay {
+  position: relative; /* Needed for positioning the overlay */
+}
+
+.gradient-overlay::before {
+  content: ""; /* Create a pseudo-element for the overlay */
+  position: absolute; /* Position it over the image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+}
+.left-comp {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 80%;
+  justify-content: space-between;
+  padding: 2rem;
+  width: 55rem;
+  height: 50rem;
+  color: aliceblue;
+  z-index: 22;
+}
+.pic {
+  position: absolute;
+  width: 55rem;
+  height: 50rem;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+p {
+  font-size: 2.5rem;
+}
+.appname {
+  text-align: right;
+  font-size: 4rem;
+}
+.lowertext {
+  display: flex;
+  justify-content: space-between;
+}
+.temp {
+  font-size: 6rem;
+}
+
+.right-comp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: aliceblue;
+  padding: 2rem;
+  width: 25rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+form {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+input {
+  padding: 0.5rem;
+}
+.field {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.top {
+  line-height: 4rem;
+  margin-bottom: 2rem;
+}
+.bottom {
+  margin-top: 1rem;
+}
+h4 {
+  font-size: 2rem;
+  text-align: center;
+}
+.chart {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #fff;
+}
+
+@media (max-width: 420px) {
+  .component {
+    display: block;
+    width: 60rem;
+  }
+
+  .left-comp {
+    width: 35rem;
+    left: 30%;
+    height: 40rem;
+  }
+
+  .pic {
+    width: 35rem;
+    height: 40rem;
+  }
+  .right-comp {
+    position: absolute;
+    width: 35rem;
+    left: 30%;
+  }
+  .time {
+    font-size: 12px;
+  }
+  .date {
+    font-size: 16px;
+  }
+  .appname {
+    font-size: 35px;
+  }
+  .temp {
+    font-size: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+}
