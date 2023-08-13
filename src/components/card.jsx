@@ -82,9 +82,9 @@ function Card(props) {
       case "13d":
         code = "snowy";
         return <WiSnow size={100} />;
-      // case "50d":
-      //   code = "snowy";
-      //   return <WiSnow size={100} />;
+      case "50d":
+        code = "snowy";
+        return <WiSnow size={100} />;
       default:
         code = "sunny";
         return <WiDaySunny size={100} />;
