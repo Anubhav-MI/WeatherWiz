@@ -45,7 +45,7 @@ function Card(props) {
   function getcor(cityname) {
     axios
       .get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${cityname}&appid=f818153715b1672a89cff5c1510951e7`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${cityname}&appid=f818153715b1672a89cff5c1510951e7`
       )
       .then((response) => {
         console.log(response.data);
