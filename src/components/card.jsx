@@ -41,6 +41,9 @@ function Card(props) {
     event.preventDefault();
     setc("");
   }
+  function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 
   function getcor(cityname) {
     axios
@@ -49,12 +52,10 @@ function Card(props) {
       )
       .then((response) => {
         console.log(response.data);
-        // console.log(response.data[0].lat);
-        // console.log(response.data[0].lon);
+
         lati = response.data[0].lat;
         long = response.data[0].lon;
-        // setlat(response.data[0].lat);
-        // setlon(response.data[0].lon);
+
         GetWeather(lati, long);
         setIsLoading(false);
       })
@@ -68,23 +69,31 @@ function Card(props) {
   function getWeatherIcon(conditionCode) {
     switch (conditionCode) {
       case "01d":
+      case "01n":
         code = "sunny";
         return <WiDaySunny size={100} />;
       case "02d":
+      case "02n":
       case "03d":
+      case "03n":
       case "04d":
+      case "04n":
         code = "cloudy";
         return <WiCloud size={100} />;
       case "09d":
+      case "09n":
       case "10d":
+      case "10n":
         code = "rainy";
         return <WiRain size={100} />;
       case "13d":
+      case "13n":
         code = "snowy";
         return <WiSnow size={100} />;
       case "50d":
-        code = "snowy";
-        return <WiSnow size={100} />;
+      case "50n":
+        code = "hazy";
+        return <WiDayHaze size={100} />;
       default:
         code = "sunny";
         return <WiDaySunny size={100} />;
@@ -109,15 +118,23 @@ function Card(props) {
 
   const weatherImages = {
     "01d": "sunny.jpg",
+    "01n": "sunny.jpg",
     "02d": "cloudy.jpg",
+    "02n": "cloudy.jpg",
     "03d": "cloudy.jpg",
+    "03n": "cloudy.jpg",
     "04d": "cloudy.jpg",
-    "09d": "rainy.jpg",
-    "10d": "rainy.jpg",
-    "13d": "snowy.jpg",
-    "50d": "hazy.jpg",
     "04n": "cloudy.jpg",
+    "09d": "rainy.jpg",
+    "09n": "rainy.jpg",
+    "10d": "rainy.jpg",
+    "10n": "rainy.jpg",
+    "13d": "snowy.jpg",
+    "13n": "snowy.jpg",
+    "50d": "hazy.jpg",
+    "50n": "hazy.jpg",
   };
+
   function setBackgroundImageUrl(conditionCode) {
     const imageName = weatherImages[conditionCode];
     if (imageName) {
@@ -135,7 +152,7 @@ function Card(props) {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   return (
@@ -190,7 +207,7 @@ function Card(props) {
               </div>
             </form>
           </div>
-          <h4>{name}</h4>
+          <h4>{capitalizeFirstLetter(name)}</h4>
           <div className="bottom">
             {" "}
             <div className="chart">
