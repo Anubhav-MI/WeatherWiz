@@ -233,7 +233,7 @@ function Card(props) {
               <div>Visibility</div>
               <div>
                 {info && info.main && info.main.temp !== undefined
-                  ? info.visibility + "mi"
+                  ? info.visibility + "m"
                   : "-"}
               </div>
             </div>

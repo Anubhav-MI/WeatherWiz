@@ -129,33 +129,33 @@ h4 {
   }
 
   .left-comp {
-    width: 25rem;
+    width: 35rem;
     top: -20%;
-    left: 18%;
+    left: 4%;
     height: 30rem;
   }
 
   .pic {
-    width: 25rem;
+    width: 35rem;
     height: 30rem;
   }
   .right-comp {
     position: absolute;
-    width: 25rem;
+    width: 35rem;
     top: 30%;
-    left: 18%;
+    left: 4%;
   }
   .time {
-    font-size: 10px;
+    font-size: 14px;
   }
   .date {
-    font-size: 12px;
+    font-size: 18px;
   }
   .appname {
-    font-size: 20px;
+    font-size: 28px;
   }
   .temp {
-    font-size: 22px;
+    font-size: 40px;
     align-items: center;
     justify-content: center;
   }
@@ -168,4 +168,8 @@ h4 {
   left: 50%;
   transform: translate(-50%, 25%);
   color: #fff;
+}
+
+.chart {
+  column-gap: 3rem;
 }
