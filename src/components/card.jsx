@@ -55,8 +55,12 @@ function Card(props) {
 
         lati = response.data[0].lat;
         long = response.data[0].lon;
+        if (cityname === "hamirpur" || cityname === "Hamirpur") {
+          GetWeather(31.68, 76.52);
+        } else {
+          GetWeather(lati, long);
+        }
 
-        GetWeather(lati, long);
         setIsLoading(false);
       })
 
